@@ -1,0 +1,70 @@
+#include <iostream>
+#include <thread>
+#include <vector>
+#include <sstream>
+#include <ctime>
+
+using namespace std;
+
+typedef unsigned long long int64;
+
+const int MAX_THREADS = 20;
+const int MAX_VALUE = 1000000000;
+
+//returns sum of squares from start to end
+void func(int64 start, int64 end, int64* answer) {
+    int64 temp = 0;
+    for(int64 i = start; i <= end; i++) {
+        temp += i * i;
+    }
+    *answer = temp;
+    return;
+}
+
+int main()
+{
+    double oneThreadTime = 0;
+    for(int NUM_THREADS = 1; NUM_THREADS < MAX_THREADS; NUM_THREADS++) {
+        cout << "Starting job with " << NUM_THREADS << " threads...";
+        time_t startTime = clock();
+
+        const int64 RANGE_SIZE = MAX_VALUE / NUM_THREADS;
+
+        //for(int q = 0; q < 100; q++) {
+        //Variable sized list of threads
+        vector<thread> threads;
+
+        int64 answers[NUM_THREADS];
+
+        for(int i = 0; i < NUM_THREADS; i++) {
+            //Make a new thread that calls func(i)
+            // add it to the list
+            int64 rangeStart = RANGE_SIZE * i + 1;
+            int64 rangeEnd = RANGE_SIZE * (i + 1);
+            //cout << rangeStart << " " << rangeEnd << endl;
+            threads.push_back( thread(&func, rangeStart, rangeEnd, &answers[i]) );
+        }
+
+        int64 finalAnswer = 0;
+        for(int i = 0; i < NUM_THREADS; i++){
+            //Wait for each of the threads before continuing on with program
+            threads[i].join();
+            finalAnswer += answers[i];
+        }
+        //}
+
+        double elapsed = clock() - startTime;
+        double elapsedTime = 1000 * elapsed / CLOCKS_PER_SEC;
+
+        cout << "  ... took: " << elapsedTime << "ms" << endl;
+
+        if(NUM_THREADS == 1) {
+            oneThreadTime = elapsedTime;
+        } else {
+            double speedup = oneThreadTime / elapsedTime;
+            cout << "  ... speedup of: " << speedup << "x" << endl;
+        }
+    }
+
+    return 0;
+}
