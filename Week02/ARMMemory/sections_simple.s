@@ -9,15 +9,17 @@ All .data will appear after end of text section
 .word   0xFFFFFFFF
 
 
-.text   @or .section .text
-MOV   r0, r0      @Do nothing
-MOV   r1, r1      @Do nothing
+.text
+.global start
+_start:
+MOV      r0, r0      @Do nothing
+MOV      r1, r1      @Do nothing
 
-.data   @More data
-.word   0xDDDDDDDD
+.data    @More data
+.word    0xDDDDDDDD
 
-.text   @more code
-MOV   r2, r2      @Do nothing
-MOV   r3, r3      @Do nothing
+.text    @more code
+MOV      r2, r2      @Do nothing
+MOV      r3, r3      @Do nothing
 
-SWI   0x11        @halt
+end:     b end       @stop program

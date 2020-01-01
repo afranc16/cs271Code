@@ -2,6 +2,9 @@
 Demonstrates the use of bitwise OR (ORR), AND and ExclusiveOR
 */
 
+
+.text
+.global start
 _start:
 
 @AND keeps 1 if both inputs are 1
@@ -25,4 +28,4 @@ MVN   r10, r9                     @ r10= 1111 ... 0101 0011
 MVN   r11, r10                    @ r11= 0000 ... 1010 1100
 
 
-SWI   0x11       @halt
+end:  b end       @stop program

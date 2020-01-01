@@ -3,6 +3,8 @@ Using Multiply instruction
 No multiplying by immediate values - only register * register
 */
 
+.text
+.global start
 _start:
 
 MOV   r1, #5
@@ -24,5 +26,5 @@ MUL   r11, r5, r8          @(r5*r8)
 MLA   r11, r6, r9, r11     @(r6*r9) + (r5*r8)
 MLA   r11, r7, r10, r11    @(r7*r10) + (r6*r9) + (r5*r8)
 
-@Halt program
-SWI   0x11
+end:  b end       @stop program
+

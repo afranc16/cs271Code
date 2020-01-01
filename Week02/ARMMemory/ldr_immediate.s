@@ -6,12 +6,10 @@ Data is tucked into end of segment
 */
 
 .text
+.global start
 _start:
 LDR   r1, =0xABCDABCD
+LDR   r2, =45000
 
-MOV   r0, r0      @Do nothing
+end:  b end       @stop program
 
-@Halt program
-SWI   0x11
-
-@0xABCDABCD will be stored here 

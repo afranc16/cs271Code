@@ -3,6 +3,9 @@ Using Rotate Right
 In a Rotate, bits that "fall off" are wrapped around
 */
 
+
+.text
+.global start
 _start:
 
 MOV   r1, #0x12      @ r1 = 0000 0000 ... 0000 0001 0010
@@ -17,5 +20,6 @@ MOV   r5, #0xFF      @ r5 = 0x000000FF
 @ROR   r6, r5, #20    @ r6 = 0x000FF000
 MOV	r6, r5, ROR #20    @ Same, for VM
 
-@Halt program
-SWI   0x11
+
+
+end:  b end       @stop program

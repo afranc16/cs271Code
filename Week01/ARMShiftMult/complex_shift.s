@@ -5,6 +5,9 @@ Cool feature of ARM influenced by architecture. You may use these if you want
 but are not required to and will not be tested on them
 */
 
+
+.text
+.global start
 _start:
 
 MOV   r1, #0x5
@@ -28,5 +31,5 @@ MOV   r5, #6
 MOV   r6, #9
 RSB   r7, r6, r5, LSL #1   @r7 = r5 * 2 - r6
 
-@Halt program
-SWI   0x11
+
+end:  b end       @stop program

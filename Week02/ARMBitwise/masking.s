@@ -3,8 +3,9 @@ Demonstrates using ANDs or shifts to "mask" a bit pattern and only retain
 a desired set of the bits.
 */
 
+.text
+.global start
 _start:
-
 
 LDR   r5, =0x1BADDEED
 
@@ -37,7 +38,4 @@ LSR   r9, r9, #24          @r9 = 0x000000DE
 LSL   r10, r5, #4          @r10 = 0xBADDEED0
 LSR   r10, r10, #20        @r10 = 0x00000BAD
 
-
-
-@Halt program
-SWI   0x11
+end:  b end       @stop program

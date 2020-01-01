@@ -2,6 +2,9 @@
 Using the Subtract and Reverse Subtract instruction
 */
 
+
+.text
+.global start
 _start:
 
 @Load some starting values
@@ -17,3 +20,5 @@ MOV   r1, #50
 MOV   r2, #200
 RSB   r3, r2, r1    @r3 = r1 - r2 using RSUB
 RSB   r5, r1, #10   @r5 = 10 - r1
+
+end:  b end       @stop program

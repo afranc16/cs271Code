@@ -16,11 +16,13 @@ MY_CONSTANT:   .word   0x64
 .section       .bss
 uninitializedGlobal:   .space  4
 
-.section       .text
+.text
+.global start
+_start:
 @Do nothing...
 MOV   r1, #0xFF
 MOV   r2, #0xFF
 MOV   r3, #0xFF
 MOV   r4, #0xFF
 
-SWI   0x11     @halt
+end:  b end       @stop program

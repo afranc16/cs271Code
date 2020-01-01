@@ -3,6 +3,9 @@ Demonstrates using ANDs or shifts to "mask" a bit pattern and only retain
 a desired set of the bits.
 */
 
+
+.text
+.global start
 _start:
 
 
@@ -43,5 +46,5 @@ MOV   r10, r5, LSL #4       @Same, but for VM
 @LSR   r10, r10, #20     @r10 = 0x00000BAD
 MOV   r10, r10, LSR #20       @Same, but for VM
 
-@Halt program
-SWI   0x11
+end:  b end       @stop program
+

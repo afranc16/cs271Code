@@ -2,6 +2,9 @@
 Demonstrates the use of BItwise Clear instruction
 */
 
+
+.text
+.global start
 _start:
 
 LDR   r5, =0x1BADDEED
@@ -13,5 +16,5 @@ BIC   r6, r5, #0b111         @or #0x7
 BIC   r7, r5,  #0xFF000000   @clear first byte
 BIC   r7, r7,  #0x00FF0000   @now clear second
 
-@Halt program
-SWI   0x11
+
+end:  b end       @stop program

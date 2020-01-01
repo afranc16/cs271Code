@@ -29,8 +29,10 @@ g:    .byte    0xAA
 h:    .hword   0x1234
 
 .text
-MOV r1, r1   @do nothing
+.global start
+_start:
+MOV   r1, r1      @do nothing
+
+end:  b end       @stop program
 
 
-@Halt program
-SWI   0x11

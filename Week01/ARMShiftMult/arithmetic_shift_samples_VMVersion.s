@@ -6,6 +6,9 @@ Blanks on left are filled with a copy of leftmost bit to preserve sign
 No Arithmetic shift left - just use logical
 */
 
+
+.text
+.global start
 _start:
 
 MOV   r3, #160       @ r2 = 0x000000a0
@@ -30,5 +33,5 @@ MOV   r5, #50
 @LSL   r8, r5, #10    @ r8 = r5 * 1024
 MOV	r8, r5, LSL #10   @ Same, for VM
 
-@Halt program
-SWI   0x11
+
+end:  b end       @stop program

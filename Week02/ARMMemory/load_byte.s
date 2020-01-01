@@ -16,6 +16,7 @@ c:   .byte   -1   @ 0xFF
 d:   .byte   0    @
 
 .text
+.global start
 _start:
 @Add one to a
 LDR   r1, =a      @r1 <- address of a
@@ -43,5 +44,4 @@ ADD   r5, r3, r4  @r5 <- b + c
 LDR   r6, =d      @r6 <- address of d
 STR   r5, [r6]    @d <- b + c
 
-@Halt program
-SWI   0x11
+end:  b end       @stop program

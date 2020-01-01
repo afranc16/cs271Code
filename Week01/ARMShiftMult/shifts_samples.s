@@ -4,6 +4,9 @@ In a logical shift, bits that "fall off" are discarded
 0's are always used to fill blanks
 */
 
+
+.text
+.global start
 _start:
 
 MOV	r1, #0x12     @ r1 = 0000 ... 0000 0001 0010
@@ -16,5 +19,5 @@ LSR	r3, r1, #2    @ r3 = 0000 ... 0000 0000 0100
 LSL   r5, r1, r3
 
 
-@Halt program
-SWI   0x11
+end:  b end       @stop program
+

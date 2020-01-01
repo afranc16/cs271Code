@@ -2,6 +2,9 @@
 Demonstration of how assembler uses pseudo instructions to
 provide
 */
+
+.text
+.global start
 _start:
 
 @MOV can only load 8 significant bits shifted an even number of bits
@@ -28,5 +31,5 @@ ADD   r6, r6, #-1
 SUB   r6, r6, #1      
 
 
-@Halt program
-SWI   0x11
+end:  b end       @stop program
+

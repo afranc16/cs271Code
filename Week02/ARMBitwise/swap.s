@@ -2,6 +2,8 @@
 Demonstrates how you can swap two registers in place wihtout using a temp
 */
 
+.text
+.global start
 _start:
 
 @Call r1 x and r2 y
@@ -27,6 +29,4 @@ EOR   r1, r1, r2     @r1 = 1001 ^ 1110 = 0111
 @   = x
 EOR   r2, r1, r2     @r2 = 0111 ^ 1110 = 1001
 
-
-@Halt program
-SWI   0x11
+end:  b end       @stop program

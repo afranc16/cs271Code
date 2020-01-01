@@ -5,6 +5,7 @@ ARM basic syntax and the move instruction
 /* Multiline comment
    _start marks begining of program */
 
+.text
 .global start
 _start:
 
@@ -15,4 +16,5 @@ MOV   r3, #0b1100 @Place 1100 binary in r3 (12 in deciamal, 0xC in Hex)
 MOV   r4, #'A'    @Place char 'A' or 65 in r4
 MOV   r5, r3      @Copy value in r3 into r5
 
-end:  b end       @intentionally go into infinite loop to stop simulator
+
+end:  b end       @stop program
