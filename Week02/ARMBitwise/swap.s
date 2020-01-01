@@ -3,7 +3,7 @@ Demonstrates how you can swap two registers in place wihtout using a temp
 */
 
 .text
-.global start
+.global _start
 _start:
 
 @Call r1 x and r2 y

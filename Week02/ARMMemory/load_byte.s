@@ -16,7 +16,7 @@ c:   .byte   -1   @ 0xFF
 d:   .byte   0    @
 
 .text
-.global start
+.global _start
 _start:
 @Add one to a
 LDR   r1, =a      @r1 <- address of a

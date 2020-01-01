@@ -29,7 +29,7 @@ g:    .byte    0xAA
 h:    .hword   0x1234
 
 .text
-.global start
+.global _start
 _start:
 MOV   r1, r1      @do nothing
 

@@ -8,7 +8,7 @@ No Arithmetic shift left - just use logical
 
 
 .text
-.global start
+.global _start
 _start:
 
 MOV   r1, #5

@@ -6,7 +6,7 @@ ARM basic syntax and the move instruction
    _start marks begining of program */
 
 .text
-.global start
+.global _start
 _start:
 
 @Line comment

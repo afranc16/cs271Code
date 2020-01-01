@@ -4,7 +4,7 @@ a desired set of the bits.
 */
 
 .text
-.global start
+.global _start
 _start:
 
 LDR   r5, =0x1BADDEED

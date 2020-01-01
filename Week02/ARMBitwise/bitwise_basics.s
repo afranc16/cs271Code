@@ -4,7 +4,7 @@ Demonstrates the use of bitwise OR (ORR), AND and ExclusiveOR
 
 
 .text
-.global start
+.global _start
 _start:
 
 @AND keeps 1 if both inputs are 1

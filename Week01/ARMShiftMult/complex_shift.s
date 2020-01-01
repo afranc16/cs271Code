@@ -7,7 +7,7 @@ but are not required to and will not be tested on them
 
 
 .text
-.global start
+.global _start
 _start:
 
 MOV   r1, #0x5

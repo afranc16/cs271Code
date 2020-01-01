@@ -4,7 +4,7 @@ provide
 */
 
 .text
-.global start
+.global _start
 _start:
 
 @MOV can only load 8 significant bits shifted an even number of bits

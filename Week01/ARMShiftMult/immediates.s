@@ -2,7 +2,7 @@
 /* Demonstrates illegal and legal immediate values */
    
 .text
-.global start
+.global _start
 _start:
 
 @Legal - requires a rotate

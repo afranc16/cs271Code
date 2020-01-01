@@ -17,7 +17,7 @@ MY_CONSTANT:   .word   0x64
 uninitializedGlobal:   .space  4
 
 .text
-.global start
+.global _start
 _start:
 @Do nothing...
 MOV   r1, #0xFF

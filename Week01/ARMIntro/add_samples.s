@@ -3,7 +3,7 @@ Demonstrates the use of the ADD instruction
 */
 
 .text
-.global start
+.global _start
 _start:
 @Load some starting values
 MOV   r1, #100

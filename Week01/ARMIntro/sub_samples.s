@@ -4,7 +4,7 @@ Using the Subtract and Reverse Subtract instruction
 
 
 .text
-.global start
+.global _start
 _start:
 
 @Load some starting values

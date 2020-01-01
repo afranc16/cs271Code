@@ -10,7 +10,7 @@ All .data will appear after end of text section
 
 
 .text
-.global start
+.global _start
 _start:
 MOV      r0, r0      @Do nothing
 MOV      r1, r1      @Do nothing

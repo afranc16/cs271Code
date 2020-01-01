@@ -1,6 +1,6 @@
 
 .text
-.global start
+.global _start
 _start:
 
 @allocate 2 words with given hex values

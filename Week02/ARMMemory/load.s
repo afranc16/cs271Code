@@ -10,7 +10,7 @@ load value at address using [register]
 x:   .word   0x12345678
 
 .text
-.global start
+.global _start
 _start:
 LDR   r1, =x      @r1 <- address of x
                   @int* r1 = &x; in c++

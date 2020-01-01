@@ -4,7 +4,7 @@ No multiplying by immediate values - only register * register
 */
 
 .text
-.global start
+.global _start
 _start:
 
 MOV   r1, #5

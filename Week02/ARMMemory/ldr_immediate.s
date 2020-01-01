@@ -6,7 +6,7 @@ Data is tucked into end of segment
 */
 
 .text
-.global start
+.global _start
 _start:
 LDR   r1, =0xABCDABCD
 LDR   r2, =45000

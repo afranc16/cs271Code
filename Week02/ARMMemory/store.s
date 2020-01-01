@@ -11,7 +11,7 @@ x:   .word   5
 y:   .word   0
 
 .text
-.global start
+.global _start
 _start:
 LDR   r1, =x      @r1 <- address of x  (&x)
 LDR   r2, [r1]    @r2 <- x

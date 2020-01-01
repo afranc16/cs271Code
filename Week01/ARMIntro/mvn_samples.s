@@ -4,7 +4,7 @@ Using the Move Negated instruction
 
 
 .text
-.global start
+.global _start
 _start:
 
 @Load r1, then load its negation into r2

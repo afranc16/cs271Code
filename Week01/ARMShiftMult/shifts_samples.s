@@ -6,7 +6,7 @@ In a logical shift, bits that "fall off" are discarded
 
 
 .text
-.global start
+.global _start
 _start:
 
 MOV	r1, #0x12     @ r1 = 0000 ... 0000 0001 0010

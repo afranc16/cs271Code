@@ -4,7 +4,7 @@ Demonstrates the use of BItwise Clear instruction
 
 
 .text
-.global start
+.global _start
 _start:
 
 LDR   r5, =0x1BADDEED
