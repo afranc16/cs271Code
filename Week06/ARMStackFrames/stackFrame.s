@@ -2,18 +2,21 @@
    Demonstrates stack frames for a simple function
 */
 
-_start:
 .text
+.global _start
+_start:
    @call bar(4)
    MOV   r0, #4
    BL    bar
 
    MOV   r4, r0   @Move returned value to r4
 
-   SWI 0x11
+   @stop program
+   end:  B     end
    @exit linux style
    @MOV   r7, #1
    @SWI   0
+
 
 
 

@@ -21,5 +21,4 @@ MOV   r3, #0x0
 @     removes top of stack into r3, next word into r2, next word into r1
 POP   {r1, r2, r3}
 
-end:
-B     end
+end:  B     end

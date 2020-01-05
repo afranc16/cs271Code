@@ -2,17 +2,21 @@
    Demonstrates stack frames used for recursive function fact (factorial)
 */
 
-_start:
 .text
+.global _start
+_start:
    @call factorial(4)
    MOV   r0, #5
    BL    fact
 
    MOV   r4, r0   @result to r4
-   SWI   0x11
+
+   @stop program
+   end:  B     end
    @exit linux style
    @MOV   r7, #1
    @SWI   0
+
 
 
 

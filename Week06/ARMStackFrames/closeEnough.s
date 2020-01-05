@@ -14,6 +14,7 @@ b:      .word   26
    Calls closeEnough function to help do the job
 */
 .text
+.global _start
 _start:
    @load a and b into "permanent" registers
    LDR   r4, =a
@@ -28,8 +29,8 @@ _start:
    MOV   r6, r0      @get my return value, store into r6
    @restore any r0-r3... (none)
 
-   @exit program
-   SWI   0x11
+   @stop program
+   end:  B     end
    @exit linux style
    @MOV   r7, #1
    @SWI   0
