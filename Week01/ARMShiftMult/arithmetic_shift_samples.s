@@ -14,6 +14,7 @@ _start:
 MOV   r1, #5
 LSL   r2, r1, #1  @ r6 = 10 or 0xA
 LSL   r3, r1, #2  @ r6 = 20 or 0x14
+LSL   r4, r1, #8  @ r6 = 5 * 256 = 1280 or 0x500
 
 @right shift n bits = divide by 2^n
 MOV   r5, #50

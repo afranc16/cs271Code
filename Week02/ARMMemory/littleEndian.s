@@ -1,3 +1,7 @@
+/*
+Demonstrate byte ordering in little-endian architectures
+*/
+
 
 .text
 .global _start
