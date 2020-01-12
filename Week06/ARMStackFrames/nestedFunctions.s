@@ -43,7 +43,7 @@ plusTwo:
 
    @@@ Epilog --------------------------------------------
    POP   {lr}              @Restore my return address and saved registers
-   MOV   PC, LR            @return (return value is in r0)
+   BX    lr                @return (return value is in r0)
 @----------------------------------------------------------------------
 
 
@@ -65,5 +65,5 @@ plusOne:
 
    @@@ Epilog --------------------------------------------
    POP   {lr}              @Restore my return address and saved registers
-   MOV   PC, LR            @return (return value is in r0)
+   BX    lr                @return (return value is in r0)
 @----------------------------------------------------------------------

@@ -32,4 +32,4 @@ loopTest:
 
    MOV   r0, r4      @setup return value
    POP   {r4, r5}
-   MOV   pc, lr      @return
+   BX    lr          @return

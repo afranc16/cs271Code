@@ -44,8 +44,8 @@ _start:
 	@deallocated stack space
 	ADD		sp, sp, #16
 	
-	@exit
-	SWI   0x11
+end:
+	B end
 	
 	
 Rectangle_Rectangle:

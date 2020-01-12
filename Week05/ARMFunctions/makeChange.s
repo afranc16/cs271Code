@@ -39,8 +39,8 @@ _start:
    MOV   r9, r1         @r9 = pennies = leftover cents
 
 
-   @exit program
-   SWI    0x11
+end:
+   B     end
 
 
 /*
@@ -66,4 +66,4 @@ udiv_test:
 
    MOV   r1, r0         @remainder = leftover part of number
    MOV   r0, r2         @quotient = temp_quotient
-   MOV   pc, lr         @return
+   BX    lr             @return

@@ -65,8 +65,8 @@ _start:
    @deallocate stack space
    ADD   sp, sp, #24
 
-   @exit
-   SWI   0x11
+end:
+   B     end
 
 
 
@@ -88,7 +88,7 @@ Time_Time:
    STR   r1, [r0, #-8]  @this->hour   = 0
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr
 
 
 
@@ -110,7 +110,7 @@ Time_Time_int_int_int:
    STR   r1, [r0, #-8]  @this->hour   = h
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr
 
 
 /*
@@ -129,7 +129,7 @@ Time_getMinute:
    MOV   r0, r1
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr
 
 
 
@@ -177,7 +177,7 @@ Time_setMinute:
                         @releases space for this and m
    POP   {fp, lr}       @restore all registers
                         @if we were using r4+ would need to pop those too
-   MOV   PC, LR
+   BX    lr
 */
 
 /*
@@ -194,7 +194,7 @@ Time_setMinute:
    STR   r1, [r0, #-4]  @this->minute = r1
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr
 
 
 /*
@@ -218,7 +218,7 @@ Time_incrHour:
    STR   r1, [r0, #-8]  @this->hour = r1
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr
 
 
 /*
@@ -237,4 +237,4 @@ Time_getHour:
    MOV   r0, r1
 
    @restore stack/registers and return
-   MOV   pc, lr
+   BX    lr

@@ -101,7 +101,9 @@ _start:
    MOV   r5, r0         @store return
 
    ADD   sp, sp, #28    @remove space for local variables
-   SWI   0x11           @exit
+
+end:
+   B     end
 
 
 
@@ -110,14 +112,14 @@ Simple implementation - no stack - just return 10
 */
 Parent_getNum:
    MOV   r0, #10
-   MOV   pc, lr
+   BX    lr
 
 /*
 Simple implementation - no stack - just return 100
 */
 Parent_getBigNum:
    MOV   r0, #100
-   MOV   pc, lr
+   BX    lr
 
 
 /*
@@ -125,14 +127,14 @@ Simple implementation - no stack - just return 5
 */
 Child_getNum:
    MOV   r0, #5
-   MOV   pc, lr
+   BX    lr
 
 /*
 Simple implementation - no stack - just return 5000
 */
 Child_getBigNum:
    LDR   r0, =5000
-   MOV   pc, lr
+   BX    lr
 
 /*
 Simple implementation - no stack
@@ -146,7 +148,7 @@ Parent_Parent:
    STR   r1, [r0, #0]            @store to this + 0
    MOV   r1, #1
    STR   r1, [r0, #-4]           @store 1 to this.x (this - 4)
-   MOV   pc, lr
+   BX    lr
 
 /*
 Simple implementation - only saves lr to stack
@@ -166,4 +168,4 @@ Child_Child:
    STR   r1, [r0, #-8]           @store 2 to this.y (this - 8)
 
    POP  {lr}
-   MOV   pc, lr
+   BX    lr

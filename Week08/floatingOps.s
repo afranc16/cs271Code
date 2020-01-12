@@ -1,8 +1,6 @@
 /*
    Demonstrates using floating point hardware to
    calculate area of circle with given radius - floor to next lowest int
-
-   For use in ARMSim
 */
 
 .data
@@ -29,7 +27,5 @@ _start:
 
    VMOV           r8, s6         @copy bits from s6 to normal r8 register
 
-
-
-   mov R0, #0x18                 @ Code number for exit
-   SWI 0x11                      @ Trigger system interrupt
+end:
+   B              end

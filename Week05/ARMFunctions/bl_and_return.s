@@ -30,5 +30,4 @@ end:
 */
 myFunction:
    MOV   r0, #10     @put 10 in r0
-   @return to where we came from by copying the Link Register into the PC
-   MOV   PC, LR      @return
+   BX    lr          @return

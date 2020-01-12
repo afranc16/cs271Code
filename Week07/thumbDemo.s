@@ -38,4 +38,6 @@ endIf:
 
 .arm      @go back to using full arm instructions
 armStuff:
-   SWI   0x11
+   
+end:
+   B     end

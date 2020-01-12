@@ -53,4 +53,4 @@ abs:
 
 end_absIf:
    @know that r0 now has abs(r0)
-   MOV   PC, LR      @return
+   BX    lr          @return

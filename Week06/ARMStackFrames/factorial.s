@@ -80,4 +80,4 @@ factExit:
    @r0 already has return
    ADD   sp, sp, #8        @Release 8 bytes for local variables
    POP   {fp, lr}          @restore all registers
-   MOV   PC, LR            @return
+   BX    lr                @return

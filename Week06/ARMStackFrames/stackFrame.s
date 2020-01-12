@@ -19,8 +19,6 @@ _start:
 
 
 
-
-
 /*
 Bar function - pointless demonstration function
 
@@ -78,4 +76,4 @@ bar:
                         @releases space for num and a
    POP   {fp, lr}       @restore all registers
                         @if we were using r4+ would need to pop those too
-   MOV   PC, LR
+   BX    lr             @return

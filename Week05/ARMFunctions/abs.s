@@ -60,4 +60,4 @@ end_absIf:
    @r0 has correct answer at this point
    @restore any registers 4+ I used
    POP   {r4, r5}
-   MOV   PC, LR         @return
+   BX    LR         @return

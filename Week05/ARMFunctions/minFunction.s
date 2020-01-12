@@ -34,8 +34,8 @@ _start:
    BL    min
    @final answer is in r0
 
-   @exit program
-   SWI   0x11
+end:
+   B     end
 
 
 /*
@@ -57,4 +57,4 @@ min:
    BLE   doneMinIf
    MOV   r0, r1   @b was smaller, copy into r0
 doneMinIf:
-   MOV   PC, LR   @copy Link Register into PC to return
+   BX    lr       @return

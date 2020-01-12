@@ -100,7 +100,7 @@ closeEnough:
    @@@ Epilog --------------------------------------------
    ADD   sp, sp, #16       @Remove 16 bytes for local variables
    POP   {fp, lr}          @Restore my return address and saved registers
-   MOV   PC, LR            @return (return value is in r0)
+   BX    lr                @return
 @----------------------------------------------------------------------
 
 
@@ -153,5 +153,5 @@ end_absIf:
    LDR   r0, [fp, #-8]     @get x into r0
    ADD   sp, sp, #4        @Remove 4 bytes for local variables
    POP   {fp, lr}          @Restore old fp and lr
-   MOV   PC, LR            @return (return value is in r0)
+   BX    lr                @return
 @----------------------------------------------------------------------
