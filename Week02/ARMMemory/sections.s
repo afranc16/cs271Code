@@ -8,7 +8,7 @@ Demonstrates various sections typically available in a program
 */
 
 .section       .data
-.word   0xC
+myGlobal:      .word   0xC
 
 .section       .rodata
 MY_CONSTANT:   .word   0x64
@@ -20,9 +20,6 @@ uninitializedGlobal:   .space  4
 .global _start
 _start:
 @Do nothing...
-MOV   r1, #0xFF
-MOV   r2, #0xFF
-MOV   r3, #0xFF
-MOV   r4, #0xFF
+MOV   r1, #0
 
 end:  b end       @stop program
