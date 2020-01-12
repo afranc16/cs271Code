@@ -19,15 +19,15 @@ c:    .word    0xCCCCCCCC
 d:    .hword   0xDDDD
 
 @e/f can go in same word as d
-e:    .byte    -1  @0xEE
-f:    .byte    -1  @0xFF
+e:    .byte    0xEE
+f:    .byte    -1    @0xFF
 
 @g: starts a new word
 g:    .byte    0x12
 
 .text
-MOV r1, r1   @do nothing
+MOV r1, r1           @do nothing
 
-end:  b end       @stop program
+end:  b end          @stop program
 
 
