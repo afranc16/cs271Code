@@ -24,17 +24,10 @@ MOV   r8, #0x00FF0000      @Start with 00FF0000
 ORR   r8, r8, #0x0F000000  @r8 = 00FF0000 | 0F000000 = 0FFF0000
 AND   r8, r5, r8           @r8 = 0x1BADDEED & 0x0FFF0000 = 0x0BAD0000
 
-@-----------------------------------------------------------------
-
-LDR   r5, =0xE0821003
-
-@isolate bits 12-15 using just shifts
-LSL   r9, r5, #16          @r9 = 0x10030000
-LSR   r9, r9, #28          @r9 = 0x00000001
-
-LDR   r6, =0x1BADDEED
-@isolate bits 16-27 (0xBAD from 0x1BADDEED) using just shifts
-LSL   r10, r6, #4          @r10 = 0xBADDEED0
-LSR   r10, r10, #20        @r10 = 0x00000BAD
+@isolate bits 2-5 : 
+@Use mask         0000 ... 0011 1100 = 3C
+@r5 has           ???? ... 1110 1101 (...ED)
+@   result ==     0000 ... 0010 1100 = 0x2C
+AND   r8, r5, #0x3C        @r8 = 0x1BADDEED & 0x0000003C = 0x0000002C
 
 end:  b end       @stop program
