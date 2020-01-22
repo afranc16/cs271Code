@@ -31,4 +31,5 @@ endElse:
    LDR     r3, =y       @load y's address
    STR     r2, [r3]     @y = value set in if/else
 
-   SWI 0x11 @halt
+
+end:  b end       @stop program

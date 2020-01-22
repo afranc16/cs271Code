@@ -22,4 +22,5 @@ loopStart:
 endLoop:
    MOV   r0, r0         @do nothing... rest of program here
 
-   SWI 0x11 @halt
+
+end:  b end       @stop program

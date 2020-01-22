@@ -16,5 +16,5 @@ _start:
 target1:
    MOV     r4, #4
 
-end:
-   SWI 0x11 @halt
+
+end:  b end       @stop program

@@ -31,4 +31,5 @@ loopTest:
    LDR   r4, =sum    @r4 = &sum
    STR   r3, [r4]    @sum = r3 
 
-   SWI 0x11 @halt
+
+end:  b end       @stop program

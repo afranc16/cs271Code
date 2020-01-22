@@ -10,4 +10,5 @@ loopStart:
    ADD   r1, r1, #1   @ r1++
    B     loopStart
 
-   SWI 0x11 @halt
+
+end:  b end       @stop program
