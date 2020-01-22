@@ -28,4 +28,4 @@ _start:
    LDR     r3, =y      @load y's address
    STR     r2, [r3]    @store result back to y
 
-   SWI   0x11          @halt
+end:  b end       @stop program
