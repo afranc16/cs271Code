@@ -12,9 +12,7 @@ public:
     Time();
     Time(int h, int m, int s);
     int getMinute();
-
     void setMinute(int m);
-
     void incrHour();
     int getHour();
 };
@@ -33,7 +31,7 @@ Time::Time(int h, int m, int s) {
 }
 
 int Time::getMinute() {
-    return minute;
+    return this->minute;
 }
 
 void Time::setMinute(int m) {
@@ -58,7 +56,6 @@ int main()
 
     time1.getHour();
     time2.getHour();
-
 
     return 0;
 }

@@ -5,15 +5,9 @@ using namespace std;
 class Parent
 {
 public:
-    virtual int getNum() {
-        return 10;
-    }
-    virtual int getBigNum() {
-        return 100;
-    }
-    int getX() {
-        return x;
-    }
+    virtual int getNum() { return 10; }
+    virtual int getBigNum() { return 100; }
+    int getX() { return x; }
 private:
     int x = 1;
 };
@@ -21,15 +15,9 @@ private:
 class Child : public Parent
 {
 public:
-    virtual int getNum() {
-        return 5;
-    }
-    virtual int getBigNum() {
-        return 5000;
-    }
-    int getY() {
-        return y;
-    }
+    virtual int getNum() { return 5; }
+    virtual int getBigNum() { return 5000; }
+    int getY() { return y; }
 private:
     int y = 2;
 };
@@ -45,8 +33,5 @@ int main()
 
     cout << pp1->getNum()    << endl;  //parent version
     cout << pp2->getBigNum() << endl;  //child version
-
-
-    return 0;
 }
 

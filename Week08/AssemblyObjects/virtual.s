@@ -86,14 +86,14 @@ _start:
    SUB   r0, fp, #8     @calculate c1's address to r0
    STR   r0, [fp, #-4]  @store to pp2
 
-   @r4 = p1->getNum
+   @r4 = pp1->getNum
    LDR   r0, [fp]       @get address from pp1 (&p1)
    LDR   r1, [r0, #0]   @get &p1 + 0 : the vtable
    LDR   r2, [r1, #0]   @get vtable + 0 : getNum
    BLX   r2             @branch with address in r2
    MOV   r4, r0         @store return
 
-   @r5 = p2->getBigNum
+   @r5 = pp2->getBigNum
    LDR   r0, [fp, #-4]  @get address from pp2 (&c1)
    LDR   r1, [r0, #0]   @get &c1 + 0 : the vtable
    LDR   r2, [r1, #4]   @get vtable + 4 : getBigNum
